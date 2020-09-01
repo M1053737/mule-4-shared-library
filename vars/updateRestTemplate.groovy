@@ -50,7 +50,7 @@ def call() {
 
     // UPDATE POM FILE
       //SCM_REPO_URL = pipelinePlaceholders.getSshUrlToRepo().replaceAll("/", "\\\\/");
-        SCM_REPO_URL = "https://github.com/M1053737/mule-4-shared-library.git";
+        SCM_REPO_URL = pipelinePlaceholders.getSshUrlToRepo();
    // SCM_REPO_URL = pipelinePlaceholders.getHttpUrlToRepo().replaceAll("/", "\\\\/");
       SCM_CREDENTIALS_ID = Constants.GITLAB_CREDENTIALS_ID // DONT KNOW IF THIS IS STILL REQUIRED...
     
