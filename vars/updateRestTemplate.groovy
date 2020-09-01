@@ -57,8 +57,8 @@ def call() {
     sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' pom.xml"
     sh "sed -i \'s#TEMPLATE_DOMAIN_DEPENDENCY#${pipelinePlaceholders.getDomainDependency()}#\' pom.xml"
     sh "sed -i \'s/TEMPLATE_API_NAME/${API_NAME_FORMATTED}/\' pom.xml"
-    sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' pom.xml"
-    sh "sed -i \'s/TEMPLATE_SCM_REPO/${SCM_REPO_URL}/\' pom.xml"
+   // sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' pom.xml"
+    //sh "sed -i \'s/TEMPLATE_SCM_REPO/${SCM_REPO_URL}/\' pom.xml"
     
     def encoded_snapshots_repo_url = "${Constants.NEXUS_SNAPSHOTS_REPO_URL}".replaceAll("/", "\\\\/")
     def encoded_releases_repo_url = "${Constants.NEXUS_RELEASES_REPO_URL}".replaceAll("/", "\\\\/")
