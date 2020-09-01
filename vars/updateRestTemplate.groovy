@@ -70,10 +70,10 @@ def call() {
 
     // UPDATE JENKINS BUILD CONFIG FILE
   //  sh "sed -i \'s/TEMPLATE_SCM_REPO/${SCM_REPO_URL}/\' buildConfig.xml"
-    sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' buildConfig.xml"
+  //  sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' buildConfig.xml"
 
     // UPDATE JENKINS DEPLOY CONFIG FILE
   //  sh "sed -i \'s/TEMPLATE_SCM_REPO/${SCM_REPO_URL}/\' deployConfig.xml"
-    sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' deployConfig.xml"
+  //  sh "sed -i \'s/TEMPLATE_SCM_CREDENTIALS_ID/${SCM_CREDENTIALS_ID}/\' deployConfig.xml"
 
 }
