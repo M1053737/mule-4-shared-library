@@ -22,10 +22,10 @@ def call() {
     
     def folderName=pipelinePlaceholders.getEnvironment()
     echo folderName
+    echo jobName
 
     def payload = readFile "buildConfig.xml"
-    url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}"
-    echo url
+ 
       
 
     def response = httpRequest (
@@ -38,6 +38,7 @@ def call() {
         validResponseCodes: '200:401'
    
     )
+    echo url
 
     sh "rm buildConfig.xml"
 }
