@@ -47,6 +47,7 @@ def call() {
     // UPDATE JENKINSDEPLOYFILE
      // sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsdeployfile"
      // sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsdeployfile"
+    echo sshUrlToRepo
 
     // UPDATE POM FILE
       SCM_REPO_URL = pipelinePlaceholders.getSshUrlToRepo().replaceAll("/", "\\\\/");
