@@ -24,6 +24,9 @@ def call() {
     echo folderName
 
     def payload = readFile "buildConfig.xml"
+    url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}"
+    echo url
+      
 
     def response = httpRequest (
         httpMode: "POST",
