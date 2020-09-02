@@ -38,7 +38,7 @@ def call() {
         validResponseCodes: '200:401'
    
     )
-    echo url
+   
 
     sh "rm buildConfig.xml"
 }
