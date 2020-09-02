@@ -28,7 +28,7 @@ def call() {
     def response = httpRequest (
             httpMode: "POST",
             url: url,
-            customHeaders: [[name: 'Authorization', value: "Token 47c673a32b2297050d5a93563b6c2663ca0fdeb9"], [name: 'Content-Type', value: 'application/json']],
+            customHeaders: [[name: 'Authorization', value: "Basic 47c673a32b2297050d5a93563b6c2663ca0fdeb9"], [name: 'Content-Type', value: 'application/json']],
             quiet: true,
             requestBody: repo_create_req
           // validResponseCodes: '200:401'
