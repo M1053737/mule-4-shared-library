@@ -9,7 +9,7 @@ def call() {
     sh "git init"
     sh "git remote add origin ${pipelinePlaceholders.getSshUrlToRepo()}"
     push("Initial commit", "master")
-
+    echo "test1"
     // ---------------------------- NEEDS TO BE CHANGED TO SUPPORT BRANCHING ----------------------------
 
     // url = "${Constants.GITLAB_PROTOCOL}${Constants.GITLAB_DOMAIN}/api/v4/projects/${createRepoResponse.id}/repository/branches?branch=development&ref=master"
@@ -34,6 +34,7 @@ def call() {
 
 def push(commitMessage, branch) {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
+    echo "test2"
     sh "git config --global user.email 'nagendra.ca2@mindtree.com'"
     sh "git config --global user.name 'M1053737'"
     sh "git remote set-url origin ${pipelinePlaceholders.getSshUrlToRepo()}"
