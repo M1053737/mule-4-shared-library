@@ -43,5 +43,7 @@ def push(commitMessage, branch) {
     echo "test3"
     sh "git branch -M master"
     echo "test4"
+    sh "eval "$(ssh-agent -s)""
+    echo "test5"
     sh "git push -u origin ${branch.toLowerCase()}"
 }
