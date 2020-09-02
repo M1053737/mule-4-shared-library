@@ -7,7 +7,8 @@ def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
 
     sh "git init"
-    sh "git remote add origin ${pipelinePlaceholders.getSshUrlToRepo()}"
+    sh "git remote add origin gitlab
+    // ${pipelinePlaceholders.getSshUrlToRepo()}"
     push("Initial commit", "master")
 
     // ---------------------------- NEEDS TO BE CHANGED TO SUPPORT BRANCHING ----------------------------
