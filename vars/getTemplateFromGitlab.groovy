@@ -2,8 +2,9 @@ import com.mulesoft.Constants
 
 def call(String template) {
     deleteDir()
-    def ssh_url = "git@github.com:M1053737/rest-template.git"
+    def url = "git@github.com:M1053737/rest-template.git"
+    ssh_url=url
     
-    git ssh_url: ssh_url // credentialsId: Constants.GITLAB_CREDENTIALS_ID,
+    git url: url // credentialsId: Constants.GITLAB_CREDENTIALS_ID,
     sh 'rm -r .git'
 }
