@@ -50,7 +50,7 @@ def call() {
 
     // UPDATE POM FILE
       //SCM_REPO_URL = pipelinePlaceholders.getSshUrlToRepo().replaceAll("/", "\\\\/");
-        SCM_REPO_URL = "https:\/\/github.com\/M1053737\/rest-template\//'";
+        SCM_REPO_URL = "https:\/\/github.com\/M1053737\/rest-template\//";
    // SCM_REPO_URL = pipelinePlaceholders.getHttpUrlToRepo().replaceAll("/", "\\\\/");
       SCM_CREDENTIALS_ID = Constants.GITLAB_CREDENTIALS_ID // DONT KNOW IF THIS IS STILL REQUIRED...
     
