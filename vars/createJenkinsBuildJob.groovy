@@ -21,8 +21,10 @@ def call() {
     //echo ${jobName}
     
     def folderName=pipelinePlaceholders.getEnvironment()
+    echo "Jenkins"
     echo folderName
     echo jobName
+    echo Constants.JENKINS_DOMAIN
 
     def payload = readFile "buildConfig.xml"
  
