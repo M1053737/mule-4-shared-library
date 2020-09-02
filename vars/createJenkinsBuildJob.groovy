@@ -31,7 +31,8 @@ def call() {
         url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
         customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml']],
-        quiet: true
+        quiet: true,
+        validResponseCodes: '200:401'
     )
 
     sh "rm buildConfig.xml"
