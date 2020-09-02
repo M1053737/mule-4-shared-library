@@ -40,5 +40,8 @@ def push(commitMessage, branch) {
     sh "git remote set-url origin ${pipelinePlaceholders.getSshUrlToRepo()}"
     sh "git add ."
     sh "git commit -m '${commitMessage}'"
+    echo "test3"
+    sh "git branch -M master"
+    echo "test4"
     sh "git push -u origin ${branch.toLowerCase()}"
 }
