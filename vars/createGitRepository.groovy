@@ -31,7 +31,7 @@ def call() {
             customHeaders: [[name: 'Authorization', value: "Token 47c673a32b2297050d5a93563b6c2663ca0fdeb9"], [name: 'Content-Type', value: 'application/json']],
             quiet: true,
             requestBody: repo_create_req,
-            validResponseCodes: '200:404:401'
+            validResponseCodes: '200:404'
         )
 
     def responseMap = new groovy.json.JsonSlurperClassic().parseText(response.content)
