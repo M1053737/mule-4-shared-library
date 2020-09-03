@@ -14,7 +14,8 @@ def call() {
         jobName = "(${pipelinePlaceholders.getDeploymentType()})-${pipelinePlaceholders.getDomainNameFormatted()}-(build)"
     }
 
-    def authString = "root:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
+    //def authString = "root:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
+    def authString = "root:${secrets.getSecret('jenkins-api-token')}"
     echo authString
     //echo ${Constants.JENKINS_DOMAIN}
     //echo ${folderName}
@@ -35,7 +36,7 @@ def call() {
         url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml']],
+        customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         quiet: true
        //validResponseCodes: '200:401'
    
