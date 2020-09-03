@@ -1,7 +1,7 @@
 package com.mulesoft
 
 public class Constants {
-    public static final JENKINS_DOMAIN = "172.17.160.1/:8080"
+    public static final JENKINS_DOMAIN = "172.17.160.1:8080"
     public static final JENKINS_API_TOKEN = "CICD-pipeline" // This is a token now
      public static final MULE_DOMAIN = "mule-platform-api.de-c1.cloudhub.io"
     public static final GITLAB_DOMAIN = "gitlab.mschnkvld.com"
