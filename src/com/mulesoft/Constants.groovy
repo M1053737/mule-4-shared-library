@@ -2,7 +2,7 @@ package com.mulesoft
 
 public class Constants {
     public static final JENKINS_DOMAIN = "localhost:8080"
-    public static final JENKINS_API_TOKEN = "CICD-pipeline" // This is a token now
+    public static final JENKINS_API_TOKEN = "CICD-pipeline1" // This is a token now
      public static final MULE_DOMAIN = "mule-platform-api.de-c1.cloudhub.io"
     public static final GITLAB_DOMAIN = "gitlab.mschnkvld.com"
     public static final GITLAB_GROUP_NAMESPACE_ID = 3 // mule-4-examples
