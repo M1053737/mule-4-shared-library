@@ -38,12 +38,14 @@ def call() {
     
     def getCrumb = httpRequest (
         httpMode: "GET",
-        url:urlget ,
+        url:urlget,
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
         quiet: true
        )
     
     echo "*******************************"
+     def response = httpRequest 'http://52.172.43.67:8080'
+        println("Status: "+response.status)
     
     def getCrumbCode = new groovy.json.JsonSlurperClassic().parseText(getCrumb.content)
     echo getCrumbCode
