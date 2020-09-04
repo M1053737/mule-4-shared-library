@@ -42,7 +42,7 @@ def call() {
           )
    
     echo request
-    echo "Status: ${request.status}"
+    echo "Status: ${request.content}"
 
 
     def response = httpRequest (
