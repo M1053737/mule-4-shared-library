@@ -33,7 +33,7 @@ def call() {
 
     def response = httpRequest (
         httpMode: "POST",
-        url: "https://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
         //url: "http://localhost:8080/createItem?name=NEWJOB4534221",
         
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
