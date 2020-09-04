@@ -1,7 +1,7 @@
 import com.mulesoft.Constants
 import com.mulesoft.PipelinePlaceholders
 import com.mulesoft.Secrets
-import groovy.json.JsonSlurper
+
 
 def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
@@ -44,10 +44,6 @@ def call() {
      
     echo request
    
-    def json = new JsonSlurper().parseText(request.content) 
-    echo "crumb: ${responseBody.crumb}"
-
-
     def response = httpRequest (
         httpMode: "POST",
         url:url,
