@@ -44,8 +44,9 @@ def call() {
        )
     
     echo "*******************************"
-     def response1 = httpRequest 'http://52.172.43.67:8080'
+     def response1 = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
         println("Status: "+response1.status)
+         println("Content: "+response1.content)
     
     def getCrumbCode = new groovy.json.JsonSlurperClassic().parseText(getCrumb.content)
     echo getCrumbCode
