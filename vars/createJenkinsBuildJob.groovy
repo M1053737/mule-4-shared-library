@@ -36,7 +36,7 @@ def call() {
     def urlget= "http://52.172.43.67:8080/crumbIssuer/api/json"
     echo urlget
     
-    def request = httpRequest (
+    def getCrumb = httpRequest (
         httpMode: "GET",
         url:urlget ,
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
@@ -45,8 +45,8 @@ def call() {
     
     echo "*******************************"
     
-     
-    echo request
+    def getCrumbCode = new groovy.json.JsonSlurperClassic().parseText(getCrumb.content)
+    echo getCrumbCode
     
     echo "******************************"
    
