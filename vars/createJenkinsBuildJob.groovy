@@ -45,6 +45,7 @@ def call() {
         quiet: true
         
         )
+    echo responseBody
 
 
     def response = httpRequest (
