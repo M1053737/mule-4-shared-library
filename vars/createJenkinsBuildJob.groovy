@@ -50,9 +50,9 @@ def call() {
         httpMode: "POST",
         url: "http://52.172.43.67:8080/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "${crumbResponseMap.crumb}"]]
+        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "${crumbResponseMap.crumb}"]],
         //quiet: true
-        //validResponseCodes: '200:302'
+        validResponseCodes: '200:403'
      )
     
     sh "rm buildConfig.xml"
