@@ -37,7 +37,7 @@ def call() {
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
        // customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "69158aaf2eb88a1e72829f89e57b00a9d5d3f9bf848934c417fe260001d8435a"]],
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "44130bc9bfd5bc62e03e839e2fd3d2fc67feed323b76f305bea0f3f51ab91bef"]],
         quiet: true
        //validResponseCodes: '200:401'
    
