@@ -14,8 +14,8 @@ def call() {
         jobName = "(${pipelinePlaceholders.getDeploymentType()})-${pipelinePlaceholders.getDomainNameFormatted()}-(build)"
     }
 
-    //def authString = "root:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
-    def authString = "root:${secrets.getSecret('jenkins-api-token')}"
+    def authString = "root:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
+    //def authString = "root:${secrets.getSecret('jenkins-api-token')}"
     echo authString
     //echo ${Constants.JENKINS_DOMAIN}
     //echo ${folderName}
@@ -33,13 +33,13 @@ def call() {
 
     def response = httpRequest (
         httpMode: "POST",
-       // url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
-        url: "http://localhost:8080/createItem?name=NEWJOB4534221",
+        url: "https://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        //url: "http://localhost:8080/createItem?name=NEWJOB4534221",
         
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
-       // customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "44130bc9bfd5bc62e03e839e2fd3d2fc67feed323b76f305bea0f3f51ab91bef"]],
+        customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
+        //customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "44130bc9bfd5bc62e03e839e2fd3d2fc67feed323b76f305bea0f3f51ab91bef"]],
         quiet: true
        //validResponseCodes: '200:401'
    
