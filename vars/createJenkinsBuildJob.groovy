@@ -29,8 +29,8 @@ def call() {
 
     def payload = readFile "buildConfig.xml"
     echo payload
-     url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}"
-    echo url
+    def url1 = "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}"
+    echo url1
 
     def response = httpRequest (
         httpMode: "POST",
