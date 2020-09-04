@@ -13,9 +13,9 @@ def call() {
         sh "rm src/main/mule/consul.standaloneProject.xml"
     }
 
-   if(pipelinePlaceholders.getDeploymentType() != "onprem-docker") {
-        sh "rm Dockerfile"
-    }
+   //if(pipelinePlaceholders.getDeploymentType() != "onprem-docker") {
+     //   sh "rm Dockerfile"
+    //}
 
     if(pipelinePlaceholders.getDeploymentType() == "rtf") {
         GROUP_ID = pipelinePlaceholders.getApStructure().organizations[pipelinePlaceholders.getOrganization()].id
