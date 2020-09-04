@@ -38,13 +38,12 @@ def call() {
         
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
-        //customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "44130bc9bfd5bc62e03e839e2fd3d2fc67feed323b76f305bea0f3f51ab91bef"]],
+        //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "aef9b3aa2dd1ed0bd9621614ba4ebecc1331c03162b2f3ea194fd57b57f4e2c1"]],
         quiet: true
        //validResponseCodes: '200:401'
    
     )
-   
-    sh "curl --manual" 
+    
     sh "rm buildConfig.xml"
 }
