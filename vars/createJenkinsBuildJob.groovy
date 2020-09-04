@@ -46,7 +46,7 @@ def call() {
     echo request
    
     def json = new JsonSlurper().parseText(request.content) 
-    echo "Status: ${request.status}"
+    echo "crumb: ${request.crumb}"
 
 
     def response = httpRequest (
