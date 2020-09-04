@@ -28,8 +28,7 @@ def call() {
     echo jobName
     echo Constants.JENKINS_DOMAIN
 
-    def payload = readFile "buildConfig.xml"
-    echo payload
+    
     
     echo "******************KRISHNA START *************"
      
@@ -45,6 +44,9 @@ def call() {
       println("crumb Code MAP : "+ crumbResponseMap)
     echo "****************KRISHNA END**************"
     echo crumbResponseMap.crumb
+    
+    def payload = readFile "buildConfig.xml"
+    echo payload
    
     def response = httpRequest (
         httpMode: "POST",
