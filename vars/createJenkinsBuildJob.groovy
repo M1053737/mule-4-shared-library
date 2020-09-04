@@ -43,6 +43,7 @@ def call() {
            )
      
     echo request
+    println('Response: '+request.content)
    
     def response = httpRequest (
         httpMode: "POST",
