@@ -13,9 +13,9 @@ def call() {
         sh "rm src/main/mule/consul.standaloneProject.xml"
     }
 
-   // if(pipelinePlaceholders.getDeploymentType() != "onprem-docker") {
-       // sh "rm Dockerfile"
-   // }
+   if(pipelinePlaceholders.getDeploymentType() != "onprem-docker") {
+        sh "rm Dockerfile"
+    }
 
     if(pipelinePlaceholders.getDeploymentType() == "rtf") {
         GROUP_ID = pipelinePlaceholders.getApStructure().organizations[pipelinePlaceholders.getOrganization()].id
@@ -44,9 +44,9 @@ def call() {
     sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsfile"
     sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsfile"
 
-    // UPDATE JENKINSDEPLOYFILE
-     // sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsdeployfile"
-     // sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsdeployfile"
+     UPDATE JENKINSDEPLOYFILE
+      sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsdeployfile"
+      sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsdeployfile"
      
    
 
