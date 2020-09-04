@@ -34,8 +34,8 @@ def call() {
     def response = httpRequest (
         httpMode: "POST",
        // url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
-        url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534222321",
-        //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
+      //  url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534222321",
+        url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         //customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
