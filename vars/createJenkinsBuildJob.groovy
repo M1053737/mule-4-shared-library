@@ -39,7 +39,7 @@ def call() {
         requestBody: payload,
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         //customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
-        customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "b7c7240355e7023838e30d0db556822c6906d9b58f6d33e7eed0ee8b0421099d"]],
+        customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "7bd298b446512725ffdfea99cd81f3d86233c6f855e13aeb689e3401a302918b"]],
         quiet: true
         //validResponseCodes: '200:408'
    
