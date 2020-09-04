@@ -44,7 +44,7 @@ def call() {
     sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsfile"
     sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsfile"
 
-     UPDATE JENKINSDEPLOYFILE
+    // UPDATE JENKINSDEPLOYFILE
       sh "sed -i \'s/TEMPLATE_API_ASSET_ID/${pipelinePlaceholders.getApiAssetId()}/\' Jenkinsdeployfile"
       sh "sed -i \'s/TEMPLATE_ORGANIZATION/${pipelinePlaceholders.getOrganization()}/\' Jenkinsdeployfile"
      
