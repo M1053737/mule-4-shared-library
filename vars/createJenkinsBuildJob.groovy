@@ -1,6 +1,8 @@
 import com.mulesoft.Constants
 import com.mulesoft.PipelinePlaceholders
 import com.mulesoft.Secrets
+import groovy.json.JsonSlurper
+
 
 
 def call() {
@@ -36,22 +38,17 @@ def call() {
     def urlget= "http://52.172.43.67:8080/crumbIssuer/api/json"
     echo urlget
     
-    def getCrumb = httpRequest (
-        httpMode: "GET",
-        url:urlget,
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
-        quiet: true
-       )
     
-    echo "*******************************"
-     def response1 = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
-        println("Status: "+response1.status)
-         println("Content: "+response1.content)
-    
-    def getCrumbCode = new groovy.json.JsonSlurperClassic().parseText(getCrumb.content)
-    echo getCrumbCode
-    
-    echo "******************************"
+    echo "******************KRISHNA START *************"
+     def crumbResponse = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
+         println("Status: "+crumbResponse.status)
+         println("Content: "+crumbResponse.content)
+     def RawRecordsResponse = context.expand('${crumbResponse}')
+     def json = new JsonSlurper().parseText(RawRecordsResponse)
+     def crumbCode = json.'crumb'
+        println("crumb Code: "+ crumbCode)
+        
+    echo "****************KRISHNA END**************"
    
     def response = httpRequest (
         httpMode: "POST",
@@ -61,7 +58,7 @@ def call() {
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "55f092c2df3ecf5d682d8e6d74b2f8c2faea389f9c143755eebba4d61ee19552"]],
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "$crumbCode"]],
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "55f092c2df3ecf5d682d8e6d74b2f8c2faea389f9c143755eebba4d61ee19552"]],
         quiet: true,
         requestBody: payload
