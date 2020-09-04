@@ -42,8 +42,6 @@ def call() {
           )
    
     echo request
-    echo request.data.text
-    println request.data.text
 
 
     def response = httpRequest (
