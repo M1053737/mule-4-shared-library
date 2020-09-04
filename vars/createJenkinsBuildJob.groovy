@@ -39,7 +39,7 @@ def call() {
     def request = httpRequest (
         httpMode: "GET",
         url:urlget ,
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']]
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
            println "response: ${response}"
     )
      
