@@ -33,13 +33,13 @@ def call() {
 
     def response = httpRequest (
         httpMode: "POST",
-        url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
-        //url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534221",
+       // url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534222321",
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         //customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "d41db9b1bd7678373d4f1f318de498651a76051124bbdc193e74b8561b6b70fb"]],
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "b7c7240355e7023838e30d0db556822c6906d9b58f6d33e7eed0ee8b0421099d"]],
         quiet: true
         //validResponseCodes: '200:408'
    
