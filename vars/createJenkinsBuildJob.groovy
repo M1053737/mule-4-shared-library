@@ -1,6 +1,7 @@
 import com.mulesoft.Constants
 import com.mulesoft.PipelinePlaceholders
 import com.mulesoft.Secrets
+import groovy.json.JsonSlurper
 
 def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
@@ -39,10 +40,13 @@ def call() {
         httpMode: "GET",
         url:urlget ,
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']]
-          )
-   
+          
+    )
+     
     echo request
-    echo "Status: ${request.content}"
+   
+    def json = new JsonSlurper().parseText(request.content) 
+    echo "Status: ${request.status}"
 
 
     def response = httpRequest (
