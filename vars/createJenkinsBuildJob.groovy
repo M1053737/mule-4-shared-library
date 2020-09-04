@@ -42,9 +42,13 @@ def call() {
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']],
         quiet: true
        )
+    
+    echo "*******************************"
+    
      
     echo request
     
+    echo "******************************"
    
     def response = httpRequest (
         httpMode: "POST",
