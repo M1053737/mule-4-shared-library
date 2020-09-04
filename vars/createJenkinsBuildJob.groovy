@@ -33,8 +33,8 @@ def call() {
 
     def response = httpRequest (
         httpMode: "POST",
-        url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
-        //url: "http://localhost:8080/createItem?name=NEWJOB4534221",
+        //url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534221",
         
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
@@ -45,6 +45,6 @@ def call() {
    
     )
    
-
+    sh "curl --manual" 
     sh "rm buildConfig.xml"
 }
