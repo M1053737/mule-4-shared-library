@@ -29,19 +29,21 @@ def call() {
 
     def payload = readFile "buildConfig.xml"
     echo payload
-    def url1 =  "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}"
-    echo url1
+    def url =  "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}"
+    echo url
 
     def response = httpRequest (
         httpMode: "POST",
-       url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        url:url
+       //url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
       //  url: "http://52.172.43.67:8080/createItem?name=NEWJOB4534222321",
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
-        requestBody: payload,
+        
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "55f092c2df3ecf5d682d8e6d74b2f8c2faea389f9c143755eebba4d61ee19552"]],
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "55f092c2df3ecf5d682d8e6d74b2f8c2faea389f9c143755eebba4d61ee19552"]],
-        quiet: true
+        quiet: true,
+        requestBody: payload
         //validResponseCodes: '200:408'
    
     )
