@@ -45,7 +45,7 @@ def call() {
         quiet: true
         
         )
-    echo crumb
+
 
     def response = httpRequest (
         httpMode: "POST",
