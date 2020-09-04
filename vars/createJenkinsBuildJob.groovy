@@ -44,6 +44,7 @@ def call() {
     def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
       println("crumb Code MAP : "+ crumbResponseMap)
     echo "****************KRISHNA END**************"
+    echo crumbResponseMap.crumb
    
     def response = httpRequest (
         httpMode: "POST",
