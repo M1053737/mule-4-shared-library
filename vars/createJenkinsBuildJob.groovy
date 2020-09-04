@@ -1,7 +1,7 @@
 import com.mulesoft.Constants
 import com.mulesoft.PipelinePlaceholders
 import com.mulesoft.Secrets
-import groovy.json.JsonSlurper
+import groovy.json.JsonSlurperClassic
 
 
 
@@ -36,13 +36,11 @@ def call() {
      def crumbResponse = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
          println("Status: "+crumbResponse.status)
          println("Content: "+crumbResponse.content)
-     def RawRecordsResponse = crumbResponse.content
-     def json = new JsonSlurper().parseText(RawRecordsResponse)
-     def crumbCode = json.'crumb'
-        println("crumb Code: "+ crumbCode)
+     //def RawRecordsResponse = crumbResponse.content
+     //def json = new JsonSlurper().parseText(RawRecordsResponse)
+     //def crumbCode = json.'crumb'
+       // println("crumb Code: "+ crumbCode)
         
-    
-    
     def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
       println("crumb Code MAP : "+ crumbResponseMap)
     echo "****************KRISHNA END**************"
