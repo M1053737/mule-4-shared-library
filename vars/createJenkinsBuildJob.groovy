@@ -43,6 +43,10 @@ def call() {
      def crumbCode = json.'crumb'
         println("crumb Code: "+ crumbCode)
         
+    
+    
+    def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
+      println("crumb Code MAP : "+ crumbResponseMap)
     echo "****************KRISHNA END**************"
    
     def response = httpRequest (
@@ -52,7 +56,7 @@ def call() {
         //url: "http://${Constants.JENKINS_DOMAIN}/job/${folderName}/createItem?name=${jobName}",
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml']],
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbCode]],
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: json.'crumb']],
         //customHeaders: [[name: 'Authorization', value: "Token ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "55f092c2df3ecf5d682d8e6d74b2f8c2faea389f9c143755eebba4d61ee19552"]],
         quiet: true
         //validResponseCodes: '200:408'
