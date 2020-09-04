@@ -48,11 +48,11 @@ def call() {
    
     def response = httpRequest (
         httpMode: "POST",
-        url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
+        url: "http://mindtreetest.southindia.cloudapp.azure.com:8080/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "${crumbResponseMap.crumb}"]],
-         //quiet: true
-        validResponseCodes: '200:302'
+        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "${crumbResponseMap.crumb}"]],
+        //quiet: true
+        //validResponseCodes: '200:302'
      )
     
     sh "rm buildConfig.xml"
