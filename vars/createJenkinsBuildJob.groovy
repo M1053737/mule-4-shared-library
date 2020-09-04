@@ -35,13 +35,15 @@ def call() {
     def urlget= "http://52.172.43.67:8080/crumbIssuer/api/json"
     echo urlget
     
-    def request = httpRequest (
+    def request = httpRequest1 (
         httpMode: "GET",
         url:urlget ,
         customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml']]
           )
    
     echo request
+    echo request.data.text
+    println request.data.text
 
 
     def response = httpRequest (
