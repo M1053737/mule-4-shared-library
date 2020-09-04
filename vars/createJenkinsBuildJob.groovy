@@ -43,7 +43,7 @@ def call() {
      def crumbResponse = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
          println("Status: "+crumbResponse.status)
          println("Content: "+crumbResponse.content)
-     def RawRecordsResponse = context.expand('${crumbResponse}')
+     def RawRecordsResponse = crumbResponse.content
      def json = new JsonSlurper().parseText(RawRecordsResponse)
      def crumbCode = json.'crumb'
         println("crumb Code: "+ crumbCode)
