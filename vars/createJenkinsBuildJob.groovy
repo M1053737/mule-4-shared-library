@@ -14,7 +14,7 @@ def call() {
 
     def crumbResponse = httpRequest (
         httpMode: "GET",
-        url: "https://${Constants.JENKINS_DOMAIN}/crumbIssuer/api/json",
+        url: "http://${Constants.JENKINS_DOMAIN}/crumbIssuer/api/json",
         customHeaders: [[name: 'Authorization', value: "Basic ${authString}"]],
         quiet: true
     )   
