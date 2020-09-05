@@ -50,8 +50,8 @@ def call() {
     def response = httpRequest (
         httpMode: "POST",
         url: "http://52.172.43.67:8080/createItem?name=${jobName}",
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: "${crumbResponseMap.crumb}"]],
-        requestBody: "${payload}"
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbResponseMap.crumb]],
+        requestBody: payload
         //quiet: true
         //validResponseCodes: '200:403'
      )
