@@ -26,8 +26,8 @@ def call() {
         httpMode: "POST",
         url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: crumbResponseMap.crumbRequestField, value: crumbResponseMap.crumb]],
-        quiet: true
+        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"], [name: 'Content-Type', value: 'application/xml'], [name: crumbResponseMap.crumbRequestField, value: crumbResponseMap.crumb]]
+        //quiet: true
     )
 
     sh "rm deployConfig.xml"
