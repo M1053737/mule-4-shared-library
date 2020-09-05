@@ -29,7 +29,7 @@ def call() {
             httpMode: "POST",
             url: url,
          //   customHeaders: [[name: 'Authorization', value: "Basic bmFnZW5kcmEuY2EyQG1pbmR0cmVlLmNvbTpxenBtQDE5OTc="], [name: 'Content-Type', value: 'application/json']],
-         customHeaders: [[name: 'Authorization', value: "Token fbe2981702be005bfdff7e1f7fc2d1c108c3279a"], [name: 'Content-Type', value: 'application/json']],
+         customHeaders: [[name: 'Authorization', value: "Token 6084a6e43e04c5d50904f8dd6d353afae94f69f3"], [name: 'Content-Type', value: 'application/json']],
            quiet: true,
             requestBody: repo_create_req
             //validResponseCodes: '200:401'
