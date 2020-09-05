@@ -45,8 +45,9 @@ def call() {
     
     def payload = readFile "buildConfig.xml"
     echo payload
-      
-  
+         payload ="<?xml version='1.0' encoding='UTF-8'?><flow-definition plugin="workflow-job@2.12.2"> <description></description></flow-definition>"
+    
+            
     def response = httpRequest (
         httpMode: "POST",
         url: "http://52.172.43.67:8080/createItem?name=${jobName}",
