@@ -15,7 +15,7 @@ public class Secrets {
    //  }
    private Map secrets = [:]
    public void setSecrets() {
-       secrets["jenkins-api-token"] = "11759b5d4c6ab5e7d5d63dee7a30a57ec7"
+       secrets["jenkins-api-token"] = "fbe2981702be005bfdff7e1f7fc2d1c108c3279a"
    }
    public String getSecret(String key) {
        return this.secrets[key];
