@@ -50,7 +50,7 @@ def call() {
         httpMode: "POST",
         url: "http://admin:admin123@52.172.43.67:8080/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbResponseMap.crumb],[name: 'User-Agent', value: 'PostmanRuntime/7.26.3']]
+        customHeaders: [[name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbResponseMap.crumb]]
         //quiet: true
         //validResponseCodes: '200:403'
      )
