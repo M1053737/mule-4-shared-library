@@ -49,9 +49,8 @@ def call() {
     def response = httpRequest (
         httpMode: "POST",
         url: "http://52.172.43.67:8080/createItem?name=${jobName}",
-        //Basic YWRtaW46YWRtaW4xMjM=
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Token 11ff423aa3fbdc5819b72a0e306baeb290"], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbResponseMap.crumb],[name: 'User-Agent', value: 'PostmanRuntime/7.26.3']]
+        customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="], [name: 'Content-Type', value: 'application/xml'], [name: 'Jenkins-Crumb', value: crumbResponseMap.crumb],[name: 'User-Agent', value: 'PostmanRuntime/7.26.3']]
         //quiet: true
         //validResponseCodes: '200:403'
      )
