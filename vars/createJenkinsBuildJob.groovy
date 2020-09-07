@@ -30,13 +30,21 @@ def call() {
     
     echo "******************KRISHNA START *************"
      
-     def crumbResponse = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
-         println("Status: "+crumbResponse.status)
-         println("Content: "+crumbResponse.content)
+   //  def crumbResponse = httpRequest 'http://52.172.43.67:8080/crumbIssuer/api/json'
+     //    println("Status: "+crumbResponse.status)
+      //   println("Content: "+crumbResponse.content)
      //def RawRecordsResponse = crumbResponse.content
      //def json = new JsonSlurper().parseText(RawRecordsResponse)
      //def crumbCode = json.'crumb'
        // println("crumb Code: "+ crumbCode)
+       def crumbResponse = httpRequest ( 
+          httpMode: "GET",
+          url:'http://52.172.43.67:8080/crumbIssuer/api/json',
+          customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="],[name: 'Content-Type', value: 'application/xml']]
+           )
+           
+         println("Status: "+crumbResponse.status)
+         println("Content: "+crumbResponse.content)
         
     def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
       println("crumb Code MAP : "+ crumbResponseMap)
