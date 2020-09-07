@@ -60,7 +60,8 @@ def call() {
            
          println("Status: "+crumbResponse1.status)
         println("Content: "+crumbResponse1.content)
-        
+         println("Content: "+crumbResponse.headers)
+    
     def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
       println("crumb Code MAP : "+ crumbResponseMap)
       echo crumbResponseMap.crumb
