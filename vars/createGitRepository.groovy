@@ -30,7 +30,7 @@ def call() {
             url: url,
            customHeaders: [[name: 'Authorization', value: "Basic bmFnZW5kcmEuY2EyQG1pbmR0cmVlLmNvbTpxenBtQDE5OTc="], [name: 'Content-Type', value: 'application/json']],
         // customHeaders: [[name: 'Authorization', value: "Token 592e5dae75de908f7b5a6d6823d4020bf5782a66"], [name: 'Content-Type', value: 'application/json']],
-           quiet: true,
+           //quiet: true,
             requestBody: repo_create_req
             //validResponseCodes: '200:401'
         )
