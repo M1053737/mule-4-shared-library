@@ -48,8 +48,9 @@ def call() {
         
     def crumbResponseMap = new groovy.json.JsonSlurperClassic().parseText(crumbResponse.content)
       println("crumb Code MAP : "+ crumbResponseMap)
+      echo crumbResponseMap.crumb
     echo "****************KRISHNA END**************"
-    echo crumbResponseMap.crumb
+  
     
     def payload = readFile "buildConfig.xml"
     echo payload
