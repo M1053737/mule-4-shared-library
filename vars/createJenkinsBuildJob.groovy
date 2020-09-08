@@ -17,6 +17,12 @@ def call() {
 
     def authString = "root:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
     //def authString = "root:${secrets.getSecret('jenkins-api-token')}"
+    
+    def s = "root:${secrets.getSecret('jenkins-api-token')}"
+    echo "krishna"+s
+    String encoded = s.bytes.encodeBase64().toString()
+    echo encoded
+    
     echo authString
      def folderName=pipelinePlaceholders.getEnvironment()
      echo folderName
