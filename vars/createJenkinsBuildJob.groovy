@@ -15,14 +15,9 @@ def call() {
         jobName = "(${pipelinePlaceholders.getDeploymentType()})-${pipelinePlaceholders.getDomainNameFormatted()}-(build)"
     }
 
-    def authString = "${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
+    def authString = "admin:${secrets.getSecret('jenkins-api-token')}".getBytes().encodeBase64().toString()
     echo authString
-    
-    def s = "${secrets.getSecret('jenkins-api-token')}"
-    echo "krishna"+s
-    String encoded = s.bytes.encodeBase64().toString()
-    echo encoded
-    
+          
     def folderName=pipelinePlaceholders.getEnvironment()
     echo folderName
     
@@ -77,7 +72,7 @@ def call() {
                     
     def response = httpRequest (
         httpMode: "POST",
-        url: "http://52.172.43.67:8080/createItem?name=${jobName}",
+        url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
       // url: "http://52.172.43.67:8080/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
        //customHeaders: [[name: 'Authorization', value: "Basic  Basic YWRtaW46MTFhYWFkNDE2MjY0M2M4YzQ0NDQ2Y2Q4NjYxNTIxNzI2NQ=="],[name: 'Content-Type', value: 'application/xml'], [name: 'crumbRequestField', value: 'Jenkins-Crumb'],[name: 'crumb', value: 'crumbResponseMap.crumb']]
