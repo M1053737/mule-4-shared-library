@@ -35,7 +35,7 @@ def call() {
         url: "http://${Constants.JENKINS_DOMAIN}/createItem?name=${jobName}",
       // url: "http://52.172.43.67:8080/job/${folderName}/createItem?name=${jobName}",
         requestBody: payload,
-        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"],[name: 'Content-Type', value: 'application/xml']]
+        customHeaders: [[name: 'Authorization', value: "Basic ${authString}"],[name: 'Content-Type', value: 'application/xml']],
         quiet: true        
      )
     
