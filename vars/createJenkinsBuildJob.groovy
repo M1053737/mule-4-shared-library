@@ -56,7 +56,7 @@ def call() {
 //url:'http://52.172.43.67:8080/crumbIssuer/api/json',
        
          // customHeaders: [[name: 'Authorization', value: "Basic YWRtaW46YWRtaW4xMjM="],[name: 'Content-Type', value: 'application/xml']]
-          )
+          //)
            
          //println("Status: "+crumbResponse1.status)
        // println("Content: "+crumbResponse1.content)
