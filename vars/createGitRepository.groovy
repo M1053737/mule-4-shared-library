@@ -38,5 +38,5 @@ def call() {
     def responseMap = new groovy.json.JsonSlurperClassic().parseText(response.content)
     //echo responseMap
     pipelinePlaceholders.setSshUrlToRepo(responseMap.ssh_url)
-    pipelinePlaceholders.setHttpUrlToRepo(responseMap.clone_url)
+    pipelinePlaceholders.setHttpUrlToRepo(responseMap.svn_url)
 }
