@@ -7,7 +7,7 @@ def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
 
     sh "git init"
-    sh "git remote add origin ${pipelinePlaceholders.getHttpUrlToRepo()}"
+    sh "git remote add origin ${pipelinePlaceholders.getSshUrlToRepo()}"
     push("Initial commit", "master")
     echo "test1"
     // ---------------------------- NEEDS TO BE CHANGED TO SUPPORT BRANCHING ----------------------------
@@ -37,7 +37,7 @@ def push(commitMessage, branch) {
     echo "test2"
     sh "git config --global user.email 'nagendra.ca2@mindtree.com'"
     sh "git config --global user.name 'M1053737'"
-    sh "git remote set-url origin ${pipelinePlaceholders.getHttpUrlToRepo()}"
+    sh "git remote set-url origin ${pipelinePlaceholders.getSshUrlToRepo()}"
     sh "git add ."
     sh "git commit -m '${commitMessage}'"
     echo "test3"
