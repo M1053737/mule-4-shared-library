@@ -37,7 +37,7 @@ def push(commitMessage, branch) {
     echo "test2"
     sh "git config --global user.email 'nagendra.ca2@mindtree.com'"
     sh "git config --global user.name 'M1053737'"
-    sh "git remote set-url origin ${pipelinePlaceholders.getSshUrlToRepo()}"
+    sh "git remote set-url origin ${pipelinePlaceholders.getHttpUrlToRepo()}"
     sh "git add ."
     sh "git commit -m '${commitMessage}'"
     echo "test3"
