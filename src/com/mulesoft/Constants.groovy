@@ -10,6 +10,7 @@ public class Constants {
     public static final GITLAB_API_TOKEN = "gitlab_api_token_secret_txt"
     public static final GITLAB_TEMPLATE_LOCATION = "mule-4-templates"
     public static final POM_GROUPID_PREFIX= "mule-demo"
+    public static final GH_CREDENTIALS_ID = "gitlab"
 
     public static final PROPERTY_FILE_NAMES = ["Development":'dev', "Test":'tst']
     public static final MAVEN_GLOBAL_SETTINGS = "global_maven_settings"
