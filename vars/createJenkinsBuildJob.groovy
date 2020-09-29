@@ -40,5 +40,8 @@ def call() {
         quiet: true        
      )
     
-    sh "rm buildConfig.xml"
+   // sh "rm buildConfig.xml"
+     sh "rm buildConfig-test.xml"
+     sh "rm buildConfig-int.xml"
+     sh "rm buildConfig-prod.xml"
 }
