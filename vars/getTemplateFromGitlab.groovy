@@ -2,7 +2,8 @@ import com.mulesoft.Constants
 
 def call(String template) {
     deleteDir()
-    def url = "git@github.com:M1053737/rest-template.git"
+    //def url = "git@github.com:M1053737/rest-template.git"
+   def url = "git@github.com:M1053737/rest-template-master1.git" 
     //def url = "https://github.com/M1053737/rest-template.git"
    
    
