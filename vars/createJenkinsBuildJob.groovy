@@ -27,7 +27,8 @@ def call() {
     echo jobName
     echo Constants.JENKINS_DOMAIN
     
-    def payload = readFile "buildConfig.xml"
+    //def payload = readFile "buildConfig.xml"
+    def payload = readFile "buildConfig-test.xml"
     echo payload
                     
     def response = httpRequest (
