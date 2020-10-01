@@ -3,7 +3,7 @@ import com.mulesoft.PipelinePlaceholders
 
  def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
- }
+ 
 
 def call(String template) {
     deleteDir()
@@ -19,3 +19,4 @@ def call(String template) {
     git url: url // credentialsId: Constants.GITLAB_CREDENTIALS_ID,
     sh 'rm -r .git'
 }
+ }
