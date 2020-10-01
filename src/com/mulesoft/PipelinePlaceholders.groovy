@@ -161,6 +161,18 @@ public class PipelinePlaceholders {
     public void setEnvironment(String environment) {
         this.environment = environment;
     }
+    
+    //REST Template reference URL CONTAINER -------------------------------------------------------------------------------------------------
+    private String RestUrl
+    
+    public String getRestTempUrl() {
+        return RestUrl;
+    }
+    public void setRestTempUrl(String RestUrl) {
+        this.RestUrl = RestUrl;
+    }
+    
+    setRestTempUrl
 
     // DEPLOYMENT TARGETS CONTAINER -------------------------------------------------------------------------------------------
     private Map deploymentTargets = [:]
