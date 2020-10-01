@@ -4,6 +4,7 @@ import com.mulesoft.PipelinePlaceholders
  def call() {
     pipelinePlaceholders = PipelinePlaceholders.getInstance()
    RestURL= pipelinePlaceholders.getRestTempUrl()
+ }
 
 def call(String template) {
     deleteDir()
