@@ -16,7 +16,7 @@ def call() {
     // UPDATE MULE PROJECT FILES
     sh "sed -i \'s/TEMPLATE_API_NAME/${API_NAME_FORMATTED}/\' src/main/resources/log4j2.xml"
 	sh "sed -i \'s/TEMPLATE_API_NAME/${API_NAME_FORMATTED}/\' src/main/app/global.xml"
-	sh "sed -i \'s/TEMPLATE_API_NAME/${API_NAME_FORMATTED}/\' src/main/resources/api/api.raml"
+	sh "sed -i \'s/TEMPLATE_API_NAME/${API_NAME_FORMATTED}/\' src/main/api/api.raml"
 	sh "mv src/main/app/entity src/main/app/${API_NAME_FORMATTED}-impl"
 	sh "mv src/main/app/api.xml src/main/app/${API_NAME_FORMATTED}.xml"
 	//sh "mv src/main/resources/api/api.raml src/main/resources/api/${API_NAME_FORMATTED}.raml"
